@@ -1,5 +1,5 @@
 const
-    dotenv = require('dorenv').load(),
+    dotenv = require('dotenv').load(),
     express = require('express'),
     app = express(),
     logger = require('morgan'),
