@@ -1,12 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
-import 'semantic-ui-react'
-// import 'semantic-ui-css'
 import httpClient from './httpClient'
 
-import NavBar from './NavBar'
+// import NavBar from './NavBar'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
+import About from './views/About'
 import SignUp from './views/SignUp'
 import Home from './views/Home'
 
@@ -26,7 +25,7 @@ class App extends React.Component {
       const { currentUser } = this.state
       return (
           <div className="App">
-              <NavBar currentUser={currentUser} />
+              {/* <NavBar currentUser={currentUser} /> */}
 
               <Switch>
 
@@ -42,6 +41,8 @@ class App extends React.Component {
 					      <Route path="/signup" render={(props) => {
 						        return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
 					      }} />
+
+                <Route path="/about" component={About} />
 
                 <Route path="/" component={Home} />
 

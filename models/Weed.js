@@ -4,8 +4,10 @@ const
     mongoose = require('mongoose'),
     weedSchema = new mongoose.Schema({
         name: String,
-        imageUrl: String,
-        details: String
+        type: String,
+        weight: Number,
+        cost: Number,
+        date: Date
 
     })
 
