@@ -1,28 +1,37 @@
-// import React from 'react'
-// import { Link } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Menu, Container, Button, } from 'semantic-ui-react'
 
-// const NavBar = (props) => {
-// 	return (
-// 		<div className='NavBar'>
-// 			<Link to="/">Home</Link>
-// 			<Link to="/about">About</Link>
-// 			{props.currentUser
-// 				? (
-// 					<span>
-// 						{/* <Link to="/user">Update List</Link> */}
-						
-// 						<Link to="/logout">Log Out</Link>
-// 					</span>
-// 				)
-// 				: (
-// 					<span>
-// 						<Link to="/login">Log In</Link>
-// 						<Link to="/signup">Sign Up</Link>
-// 					</span>
-// 				)
-// 			}
-// 		</div>
-// 	)
-// }
+const NavBar = (props) => {
+  const { fixed } = props
+	return (
+		<div className='NavBar'>
+      <Menu
+        fixed={fixed ? 'top' : null}
+        inverted={!fixed}
+        pointing={!fixed}
+        secondary={!fixed}
+        size='large'
+      >
+        <Container>
+          <Link to="/"><Menu.Item as='a' active>Home</Menu.Item></Link>
+          {props.currentUser
+            ? (
+              <Menu.Item position='right'>
+                <Link to="/logout">Log Out</Link>
+              </Menu.Item>
+            )
+            : (
+              <Menu.Item position='right'>
+                <Link to="login"><Button as='a' inverted={!fixed}>Log in</Button></Link>
+                <Link to="signup"><Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>Sign Up</Button></Link>
+              </Menu.Item>
+            )
+          }
+        </Container>
+      </Menu>
+		</div>
+	)
+}
 
-// export default NavBar
+export default NavBar

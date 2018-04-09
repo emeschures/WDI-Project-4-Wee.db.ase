@@ -4,11 +4,11 @@ const
     mongoose = require('mongoose'),
     weedSchema = new mongoose.Schema({
         name: String,
-        type: String,
-        weight: Number,
-        cost: Number,
-        date: Date
-
+        strain: String,
+        weight: String,
+        cost: String,
+        date: Date,
+        user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
     })
 
     const Weed = mongoose.model('Weed', weedSchema)

@@ -1,16 +1,39 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'
+import { Switch, Route, Link } from 'react-router-dom'
 import httpClient from './httpClient'
 
-// import NavBar from './NavBar'
+import {
+  Button,
+  Container,
+  Divider,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  List,
+  Menu,
+  Responsive,
+  Segment,
+  Sidebar,
+  Visibility,
+} from 'semantic-ui-react'
+
+import NavBar from './NavBar'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
 import About from './views/About'
+import Contact from './views/Contact'
 import SignUp from './views/SignUp'
 import Home from './views/Home'
+import HomeHero from './views/HomeHero'
+
 
 class App extends React.Component {
     state = { currentUser: httpClient.getCurrentUser() }
+
+    hideFixedMenu = () => this.setState({ fixed: false })
+    showFixedMenu = () => this.setState({ fixed: true })
 
     onLoginSuccess(user) {
       this.setState({ currentUser: httpClient.getCurrentUser() })
@@ -22,32 +45,59 @@ class App extends React.Component {
     }   
   
     render() {
-      const { currentUser } = this.state
+      const { currentUser, fixed } = this.state
       return (
-          <div className="App">
-              {/* <NavBar currentUser={currentUser} /> */}
+          <Responsive className="App">
+            <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
+              <Segment inverted textAlign='center' vertical>
+                <NavBar fixed={fixed} />
+                <Route exact path="/" component={HomeHero} />
+              </Segment>
+              
+              <Container style={{ paddingTop: '3em' }}>
+                <Switch>
 
-              <Switch>
-
-                <Route path="/login" render={(props) => {
+                  <Route path="/login" render={(props) => {
                     return <LogIn {...props} onLoginSuccess={this.onLoginSuccess.bind(this)} />
-                }} />
-
-                <Route path="/logout" render={(props) => {
+                  }} />
+                  
+                  <Route path="/logout" render={(props) => {
                     return <LogOut onLogOut={this.logOut.bind(this)} />
-                }} />
+                  }} />
+                  
+                  <Route path="/signup" render={(props) => {
+                    return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
+                  }} />
+                  
+                  <Route path="/about" component={About} />
+                  
+                  <Route path="/" component={Home} />
+                  
+                </Switch>
 
-                {/* the sign up component takes an 'onSignUpSuccess' prop which will perform the same thing as onLoginSuccess: set the state to contain the currentUser */}
-					      <Route path="/signup" render={(props) => {
-						        return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
-					      }} />
-
-                <Route path="/about" component={About} />
-
-                <Route path="/" component={Home} />
-
-              </Switch>
-          </div>
+              </Container>
+              
+              {/* FOOTER */}
+              {/* <Segment inverted vertical style={{ padding: '5em 7em', position: 'fixed', bottom: 0, width: '100%' }}>
+                <Grid divided inverted stackable>
+                  <Grid.Row>
+                    <Grid.Column width={3}>
+                    <Header inverted as='h4' content='About' />
+                    <List link inverted>
+                      <List.Item as='a'>About Us</List.Item>
+                      <List.Item as='a'>Contact Us</List.Item>
+                    </List>
+                    </Grid.Column>
+                    <Grid.Column width={7}>
+                    <Header as='h4' inverted>Weed.io</Header>
+                    <p>Go green.</p>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment> */}
+              {/* END FOOTER */}
+            </Visibility>
+          </Responsive>
         );
       }
     }

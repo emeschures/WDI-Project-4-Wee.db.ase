@@ -1,6 +1,6 @@
 import React from 'react'
 import httpClient from '../httpClient'
-import { Form } from 'semantic-ui-react'
+import { Form, Button } from 'semantic-ui-react'
 
 // sign up form behaves almost identically to log in form. We could create a flexible Form component to use for both actions, but for now we'll separate the two:
 class SignUp extends React.Component {
@@ -38,10 +38,10 @@ class SignUp extends React.Component {
                             <Form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
                                 <Form.Group widths='equal'>
                                     
-                                    <Form.Input label="Name" placeholder="Name" name="name" value={name} />
-                                    <Form.Input label="Email" placeholder="Email" name="email" value={email} />
-                                    <Form.Input label="Password" placeholder="Password" name="password" value={password} />
-                                    <Form.Button>Sign Up</Form.Button>
+                                    <Form.Input label="Name" type="text" placeholder="Name" name="name" value={name} />
+                                    <Form.Input label="Email" type="text" placeholder="Email" name="email" value={email} />
+                                    <Form.Input label="Password" type="password" placeholder="Password" name="password" value={password} />
+                                    <Button>Sign Up</Button>
                                     
                                 </Form.Group>
                             </Form>
