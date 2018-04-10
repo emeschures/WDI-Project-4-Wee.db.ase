@@ -8,10 +8,14 @@ weediesRouter.route('/')
 	.get(weediesCtrl.index)
 	.post(weediesCtrl.create)
 
-weediesRouter.use(verifyToken)
 weediesRouter.route('/:id')
 	.get(weediesCtrl.show)
 	.patch(weediesCtrl.update)
 	.delete(weediesCtrl.destroy)
+	
+weediesRouter.use(verifyToken)
+// a protected api route for posting a comment... here...
+
+
 
 module.exports = weediesRouter

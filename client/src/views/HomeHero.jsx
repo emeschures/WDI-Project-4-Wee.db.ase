@@ -7,7 +7,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container style={{ minHeight: 700, padding: '1em 0em' }} text>
     <Header
       as='h1'
-      content="Weed.411"
+      content="Wee.db.ook"
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
@@ -18,7 +18,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='Keeping track of it all.'
+      content='The Weed DataBase'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
