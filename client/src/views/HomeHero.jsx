@@ -7,7 +7,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container style={{ minHeight: 700, padding: '1em 0em' }} text>
     <Header
       as='h1'
-      content='Weed.io'
+      content="Weed.411"
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
@@ -26,6 +26,7 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
+    {/* Conditionally render this here? */}
     <Link to="/login">
       <Button primary size='huge'>
       Get Started

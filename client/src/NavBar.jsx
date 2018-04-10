@@ -18,7 +18,8 @@ const NavBar = (props) => {
           {props.currentUser
             ? (
               <Menu.Item position='right'>
-                <Link to="/logout">Log Out</Link>
+                <Link to="/logout"><Button as='a' >Log Out</Button></Link>
+                <Link to="/profile"><Button as='a' >Profile</Button></Link>
               </Menu.Item>
             )
             : (

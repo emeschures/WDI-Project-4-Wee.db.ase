@@ -1,21 +1,12 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types'
-import { Switch, Route, Link } from 'react-router-dom'
+import React from 'react';
+// import PropTypes from 'prop-types'
+import { Switch, Route } from 'react-router-dom'
 import httpClient from './httpClient'
 
 import {
-  Button,
   Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
   Responsive,
   Segment,
-  Sidebar,
   Visibility,
 } from 'semantic-ui-react'
 
@@ -23,10 +14,12 @@ import NavBar from './NavBar'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
 import About from './views/About'
-import Contact from './views/Contact'
+// import Contact from './views/Contact'
 import SignUp from './views/SignUp'
 import Home from './views/Home'
 import HomeHero from './views/HomeHero'
+// import NewWeed from './views/NewWeed'
+import Profile from './views/Profile'
 
 
 class App extends React.Component {
@@ -68,6 +61,8 @@ class App extends React.Component {
                   <Route path="/signup" render={(props) => {
                     return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
                   }} />
+
+                  <Route path="/profile" component={Profile} />
                   
                   <Route path="/about" component={About} />
                   

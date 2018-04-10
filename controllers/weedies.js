@@ -1,20 +1,22 @@
-const Weed = require('../models/Weed.js')
-const signToken = require('../serverAuth.js').signToken
+const
+	express = require('express'),
+	Weed = require('../models/Weed.js'),
+	{ verifyToken } = require('../serverAuth,js')
+
 
 module.exports = {
-	// list all users
+	// list all
 	index: (req, res) => {
-		User.find({}, (err, users) => {
-			res.json(users)
+		Weed.find({}, (err, weed) => {
+			res.json(weed)
 		})
 	},
 
-	// get one user
+	// get one
 	show: (req, res) => {
-		console.log("Current User:")
-		console.log(req.user)
-		User.findById(req.params.id, (err, user) => {
-			res.json(user)
+		
+		Weed.findById(req.params.id, (err, weed) => {
+			res.json(weed)
 		})
 	},
 
@@ -44,19 +46,4 @@ module.exports = {
 			res.json({success: true, message: "User deleted.", user})
 		})
 	},
-
-	// the login route
-	authenticate: (req, res) => {
-		// check if the user exists
-		User.findOne({email: req.body.email}, (err, user) => {
-			// if there's no user or the password is invalid
-			if(!user || !user.validPassword(req.body.password)) {
-				// deny access
-				return res.json({success: false, message: "Invalid credentials."})
-			}
-
-			const token = signToken(user)
-			res.json({success: true, message: "Token attached.", token})
-		})
-	}
 }
