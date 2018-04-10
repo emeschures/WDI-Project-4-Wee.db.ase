@@ -30,7 +30,7 @@ const Home = () => (
 		</Segment>
 		<Segment style={{ padding: '8em 0em' }} vertical>
 			<Container text>
-				<Header as='h3' style={{ fontSize: '2em' }}>Placeholder</Header>
+				<Header as='h3' style={{ fontSize: '2em' }}>High!</Header>
 				<p style={{ fontSize: '1.33em' }}>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat suscipit ut dolore iste quo repudiandae quam rerum labore laboriosam dicta esse quas deserunt, adipisci atque libero accusantium quos sequi eos!
 				</p>
@@ -41,7 +41,7 @@ const Home = () => (
 				style={{ margin: '3em 0em', textTransform: 'uppercase' }}
 				>
 				</Divider>
-				<Header as='h3' style={{ fontSize: '2em' }}>Placeholder 2</Header>
+				<Header as='h3' style={{ fontSize: '2em' }}>Bake</Header>
 				<p style={{ fontSize: '1.33em' }}>
 				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque omnis quos mollitia molestias beatae, sequi laborum repellendus quis harum ipsam recusandae accusamus modi ullam veritatis cum. Laboriosam aperiam ipsa incidunt.
 				</p>

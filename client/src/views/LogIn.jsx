@@ -37,8 +37,8 @@ class LogIn extends React.Component {
 						<Form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
                                 <Form.Group widths='equal'>
                                     
-                                    <Form.Input label="Email" type="text" placeholder="Email" name="email" value={email} />
-                                    <Form.Input label="Password" type="password" placeholder="Password" name="password" value={password} />
+                                    <Form.Input autoComplete="login-email" label="Email" type="text" placeholder="Email" name="email" value={email} />
+                                    <Form.Input autoComplete="login-password" label="Password" type="password" placeholder="Password" name="password" value={password} />
                                     <Button>Log In</Button>
                                     
                                 </Form.Group>

@@ -50,7 +50,7 @@ class App extends React.Component {
           <Responsive className="App">
             <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
               <Segment inverted textAlign='center' vertical>
-                <NavBar fixed={fixed} />
+                <NavBar currentUser={currentUser} fixed={fixed} />
                 <Route exact path="/" component={HomeHero} />
               </Segment>
               

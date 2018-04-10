@@ -38,9 +38,9 @@ class SignUp extends React.Component {
                             <Form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
                                 <Form.Group widths='equal'>
                                     
-                                    <Form.Input label="Name" type="text" placeholder="Name" name="name" value={name} />
-                                    <Form.Input label="Email" type="text" placeholder="Email" name="email" value={email} />
-                                    <Form.Input label="Password" type="password" placeholder="Password" name="password" value={password} />
+                                    <Form.Input autoComplete="signup-name" label="Name" type="text" placeholder="Name" name="name" value={name} />
+                                    <Form.Input autoComplete="signup-email" label="Email" type="text" placeholder="Email" name="email" value={email} />
+                                    <Form.Input autoComplete="signup-password" label="Password" type="password" placeholder="Password" name="password" value={password} />
                                     <Button>Sign Up</Button>
                                     
                                 </Form.Group>
