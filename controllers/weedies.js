@@ -29,7 +29,7 @@ module.exports = {
 		Weed.findById(req.params.id, (err, weed) => {
 			Object.assign(weed, req.body)
 			weed.save((err, updatedWeed) => {
-				res.json({success: true, message: "User updated.", weed})
+				res.json({success: true, message: "Weed updated.", weed})
 			})
 		})
 	},

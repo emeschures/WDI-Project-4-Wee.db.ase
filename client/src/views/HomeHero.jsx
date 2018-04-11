@@ -26,13 +26,13 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-    {/* Conditionally render this here? */}
-    <Link to="/login">
+    
+    {/* <Link to="/login">
       <Button primary size='huge'>
       Get Started
       <Icon name='right arrow' />
       </Button>
-    </Link>
+    </Link> */}
   </Container>
 )
 

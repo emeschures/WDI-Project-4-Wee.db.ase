@@ -55,9 +55,9 @@ httpClient.logOut = function() {
 	return true
 }
 
-// httpClient.getBars = function() {
-// 	return this({ method: 'get', url: '/api/bars' })
-// }
+httpClient.getAllWeed = function() {
+	return this({ method: 'get', url: '/api/weed' })
+}
 
 // httpClient.createBar = function(barInfo) {
 // 	return this({ method: 'post', url: '/api/bars', data: barInfo })

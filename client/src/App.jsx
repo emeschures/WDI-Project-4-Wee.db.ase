@@ -20,6 +20,7 @@ import Home from './views/Home'
 import HomeHero from './views/HomeHero'
 // import NewWeed from './views/NewWeed'
 import Profile from './views/Profile'
+import Weed from './views/Weed'
 
 
 class App extends React.Component {
@@ -65,6 +66,8 @@ class App extends React.Component {
                   <Route path="/profile" component={Profile} />
                   
                   <Route path="/about" component={About} />
+
+                  <Route path="/weed" component={Weed} />
                   
                   <Route path="/" component={Home} />
                   
