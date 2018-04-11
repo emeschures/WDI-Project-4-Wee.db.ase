@@ -59,6 +59,10 @@ httpClient.getWeed = function() {
 	return this({ method: 'get', url: '/api/weed' })
 }
 
+httpClient.newWeed = function(weedInfo) {
+  return this({ method: 'post', url: '/api/weed', data: weedInfo })
+}
+
 // httpClient.createBar = function(barInfo) {
 // 	return this({ method: 'post', url: '/api/bars', data: barInfo })
 // }

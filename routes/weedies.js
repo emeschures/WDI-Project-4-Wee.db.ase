@@ -15,7 +15,7 @@ weediesRouter.route('/:id')
 	
 weediesRouter.use(verifyToken)
 // a protected api route for posting a comment... here...
-
+	
 
 
 module.exports = weediesRouter

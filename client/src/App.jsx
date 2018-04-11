@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import httpClient from './httpClient'
 
 import {
@@ -18,7 +18,7 @@ import About from './views/About'
 import SignUp from './views/SignUp'
 import Home from './views/Home'
 import HomeHero from './views/HomeHero'
-// import NewWeed from './views/NewWeed'
+import NewWeed from './views/NewWeed'
 import Profile from './views/Profile'
 import Weed from './views/Weed'
 
@@ -63,11 +63,23 @@ class App extends React.Component {
                     return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
                   }} />
 
-                  <Route path="/profile" component={Profile} />
+                  <Route path="/profile" render={(props) => {
+                    return <Profile {...props} />
+                  }} />
+
+                  <Route path="/newWeed" render={(routeProps) => {
+                    return currentUser
+                    ? <NewWeed currentUser={currentUser} routeProps={routeProps} />
+                    : <Redirect to="/login" />
+                  }} />
+
+                  {/* <Route path="/profile" component={Profile} /> */}
                   
                   <Route path="/about" component={About} />
 
-                  <Route path="/weed" component={Weed} />
+                  <Route path="/weed" render={(routeProps) => {
+                    return <Weed currentUser={currentUser} routeProps={routeProps} />
+                  }} />
                   
                   <Route path="/" component={Home} />
                   

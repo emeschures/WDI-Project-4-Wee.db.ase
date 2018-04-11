@@ -7,7 +7,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container style={{ minHeight: 700, padding: '1em 0em' }} text>
     <Header
       as='h1'
-      content="Wee.db.ook"
+      content="Wee.db.ase"
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
