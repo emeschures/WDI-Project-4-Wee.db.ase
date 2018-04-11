@@ -35,16 +35,16 @@ class SignUp extends React.Component {
 				<div className='row'>
 					<div className='column column-33 column-offset-33'>
 						<h1>Sign Up</h1>
-                            <Form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-                                <Form.Group widths='equal'>
-                                    
-                                    <Form.Input autoComplete="signup-name" label="Name" type="text" placeholder="Name" name="name" value={name} />
-                                    <Form.Input autoComplete="signup-email" label="Email" type="text" placeholder="Email" name="email" value={email} />
-                                    <Form.Input autoComplete="signup-password" label="Password" type="password" placeholder="Password" name="password" value={password} />
-                                    <Button>Sign Up</Button>
-                                    
-                                </Form.Group>
-                            </Form>
+              <Form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
+                <Form.Group widths='equal'>
+                    
+                  <Form.Input autoComplete="signup-name" label="Name" type="text" placeholder="Name" name="name" value={name} />
+                  <Form.Input autoComplete="signup-email" label="Email" type="text" placeholder="Email" name="email" value={email} />
+                  <Form.Input autoComplete="signup-password" label="Password" type="password" placeholder="Password" name="password" value={password} />
+                  <Button>Sign Up</Button>
+                  
+                </Form.Group>
+              </Form>
 					</div>
 				</div>
 			</div>

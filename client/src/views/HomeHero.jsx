@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Container, Header, Button, Icon } from 'semantic-ui-react'
+import { Container, Header } from 'semantic-ui-react' //Button, Icon
 
 const HomepageHeading = ({ mobile }) => (
   <Container style={{ minHeight: 700, padding: '1em 0em' }} text>

@@ -55,7 +55,7 @@ httpClient.logOut = function() {
 	return true
 }
 
-httpClient.getAllWeed = function() {
+httpClient.getWeed = function() {
 	return this({ method: 'get', url: '/api/weed' })
 }
 

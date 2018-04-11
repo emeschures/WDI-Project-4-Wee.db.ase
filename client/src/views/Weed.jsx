@@ -1,5 +1,6 @@
 import React from 'react'
 import httpClient from '../httpClient'
+import { Container, Header } from 'semantic-ui-react'
 
 class Weed extends React.Component {
 
@@ -21,7 +22,7 @@ class Weed extends React.Component {
             return (
             <ul>
               <li key={w._id}>{w.name}</li>
-              <li>{w.strain}</li>
+              <li>{w.weedType}</li>
               <li>{w.description}</li>
             </ul>
             )
