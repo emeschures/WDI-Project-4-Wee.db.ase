@@ -20,7 +20,7 @@ class Profile extends React.Component {
 
   handleEditProfileClick() {
     this.props.routeProps.history.push('/editprofile')
-    
+
   }
     
   render() {
@@ -28,21 +28,22 @@ class Profile extends React.Component {
     return (
       <Card centered>
       <Image src={profileImage} alt={currentUser.name} />
-      <Card.Content>
-        <Card.Header>
-          {currentUser.name}
-        </Card.Header>
-      
-        <Card.Description>
-          {currentUser.email}
-        </Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <a onClick={this.handleEditProfileClick.bind(this)}>
-          <Icon name='user' />
-          Edit 
-        </a>
-      </Card.Content>
+        <Card.Content>
+          <Card.Header>
+            {currentUser.name}
+          </Card.Header>
+        
+          <Card.Description>
+            {currentUser.email}
+          </Card.Description>
+        </Card.Content>
+        
+        <Card.Content extra>
+          <a onClick={this.handleEditProfileClick.bind(this)}>
+            <Icon name='user' />
+            Edit 
+          </a>
+        </Card.Content>
     </Card>
   
   

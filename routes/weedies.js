@@ -12,6 +12,8 @@ weediesRouter.route('/:id')
 	.get(weediesCtrl.show)
 	.patch(weediesCtrl.update)
 	.delete(weediesCtrl.destroy)
+
+weediesRouter.post('/:id/posts', weediesCtrl.createPost)
 	
 weediesRouter.use(verifyToken)
 // a protected api route for posting a comment... here...

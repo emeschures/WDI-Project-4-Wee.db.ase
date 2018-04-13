@@ -21,7 +21,8 @@ import HomeHero from './views/HomeHero'
 import NewWeed from './views/NewWeed'
 import Profile from './views/Profile'
 import Weed from './views/Weed'
-import EditProfile from './views/EditProfile';
+import EditProfile from './views/EditProfile'
+import Comments from './views/Comments'
 
 
 class App extends React.Component {
@@ -64,9 +65,9 @@ class App extends React.Component {
                     return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
                   }} />
 
-                  {/* <Route path="/profile" render={(props) => {
-                    return <Profile {...props} />
-                  }} /> */}
+                  <Route path="/weed/:id" render={(props) => {
+                    return <Comments {...props} />
+                  }} />
 
                   <Route path="/newWeed" render={(routeProps) => {
                     return currentUser

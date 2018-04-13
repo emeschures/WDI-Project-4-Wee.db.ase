@@ -25,6 +25,15 @@ module.exports = {
 		})
 	},
 
+	createPost: (req, res) => {
+		Weed.findById(req.params.id, (err, weed) => {
+			weed.comments.push(req.body)
+			weed.save((err) => {
+				res.json(weed)
+			})
+		})
+	},
+
 	update: (req, res) => {
 		Weed.findById(req.params.id, (err, weed) => {
 			Object.assign(weed, req.body)
