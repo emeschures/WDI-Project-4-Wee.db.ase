@@ -1,26 +1,56 @@
 import React from 'react'
-import { Button, Header, Image, Modal } from 'semantic-ui-react'
-import { Card, Icon } from 'semantic-ui-react'
+import httpClient from '../httpClient'
+// import { Link } from 'react-router-dom'
+import { Card, Icon, Image } from 'semantic-ui-react'
 
-const Profile = (props) => {
-  <div>
-  <Card>
-  <Image src='https://react.semantic-ui.com/assets/images/avatar/large/rachel.png' />
-    <Card.Content>
-      <Card.Header>
-        {props.user.name}
-      </Card.Header>       
-       <Card.Meta>
-        <span>
-          {props.user.email}
-        </span>
-      </Card.Meta>
-    </Card.Content>
-  </Card>
-  </div>
+
+class Profile extends React.Component {
+
+  state = {user: null}
+
+  componentDidMount(){
+    console.log(this.props)
+    // httpClient.getUser(this.routeProps.match.params.id).then((serverResponse) => {
+    //   console.log(serverResponse.data)
+    //   this.setState({
+    //     user: serverResponse.data
+    //   })
+    // })
+  }
+
+  handleEditProfileClick() {
+    this.props.routeProps.history.push('/editprofile')
+
+    
+  }
+    
+  render() {
+    const currentUser = this.props.currentUser
+    return (
+      <Card centered>
+      <Image src='https://pbs.twimg.com/media/BaAobmoIQAAt88c.jpg' />
+      <Card.Content>
+        <Card.Header>
+          {currentUser.name}
+        </Card.Header>
+      
+        <Card.Description>
+          {currentUser.email}
+        </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <a onClick={this.handleEditProfileClick.bind(this)}>
+          <Icon name='user' />
+          Edit 
+        </a>
+      </Card.Content>
+    </Card>
+  
+  
+    )
+  }
 }
-
-
+ 
 export default Profile
 
   // <Modal className="profile" trigger={<Button>Edit User</Button>}>

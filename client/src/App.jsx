@@ -21,6 +21,7 @@ import HomeHero from './views/HomeHero'
 import NewWeed from './views/NewWeed'
 import Profile from './views/Profile'
 import Weed from './views/Weed'
+import EditProfile from './views/EditProfile';
 
 
 class App extends React.Component {
@@ -63,9 +64,9 @@ class App extends React.Component {
                     return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
                   }} />
 
-                  <Route path="/profile" render={(props) => {
+                  {/* <Route path="/profile" render={(props) => {
                     return <Profile {...props} />
-                  }} />
+                  }} /> */}
 
                   <Route path="/newWeed" render={(routeProps) => {
                     return currentUser
@@ -73,7 +74,13 @@ class App extends React.Component {
                     : <Redirect to="/login" />
                   }} />
 
-                  {/* <Route path="/profile" component={Profile} /> */}
+                  <Route path="/profile" render={(routeProps) =>{
+                    return <Profile currentUser={currentUser} routeProps={routeProps} />
+                  }} />
+
+                  <Route path="/editprofile" render={(routeProps) => {
+                    return <EditProfile currentUser={currentUser} routeProps={routeProps} />
+                  }} />
                   
                   <Route path="/about" component={About} />
 

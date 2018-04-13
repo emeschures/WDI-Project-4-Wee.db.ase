@@ -63,9 +63,13 @@ httpClient.newWeed = function(weedInfo) {
   return this({ method: 'post', url: '/api/weed', data: weedInfo })
 }
 
-// httpClient.createBar = function(barInfo) {
-// 	return this({ method: 'post', url: '/api/bars', data: barInfo })
-// }
+httpClient.editProfile = function(id, fields) {
+  return this({ method: 'patch', url: `/api/users/${id}`, data: fields })
+}
+
+httpClient.getUser = function(id) {
+  return this({ method: 'get', url: `/api/users/${id}`})
+}
 
 // During initial app load attempt to set a localStorage stored token
 // as a default header for all api requests.

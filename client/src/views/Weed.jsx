@@ -1,7 +1,7 @@
 import React from 'react'
 // import { Redirect } from 'react-router-dom'
 import httpClient from '../httpClient'
-import { Container, Header, Segment, Button } from 'semantic-ui-react'
+import { Container, Header, Button, Divider, Segment } from 'semantic-ui-react'
 
 class Weed extends React.Component {
 
@@ -24,16 +24,22 @@ class Weed extends React.Component {
      
       <Container>
        <Header as='h1' textAlign='center'>Newest Strains</Header>
-        
+       <Segment>
+   
+    <Divider clearing />
+
           {weed.map((w) => {
             return (
             <div>
               <Header as='h3' key={w._id} className="weedName">{w.name}</Header>
+    <Button floated='right'>Comment</Button>
+              
               <Header as='h4'className="weedType">Type: {w.weedType}</Header>
               <p>{w.description}</p>
             </div>
             )
           })}
+  </Segment>
         
         </Container>
       

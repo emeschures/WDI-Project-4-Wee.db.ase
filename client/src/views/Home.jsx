@@ -14,22 +14,22 @@ const Home = () => (
 				<Grid.Row>
 				<Grid.Column width={8}>
 					<Header as='h3' style={{ fontSize: '2em' }}>Products and How to Consume</Header>
-					<p style={{ fontSize: '1.33em' }}>
+					{/* <p style={{ fontSize: '1.33em' }}>
 					Smoking | Vaping | Edibles | Topicals | Concentrates
-					</p>
+					</p> */}
 					<Header as='h3' style={{ fontSize: '2em' }}>The Plant</Header>
-					<p style={{ fontSize: '1.33em' }}>
+					{/* <p style={{ fontSize: '1.33em' }}>
 				  	What is Cannabis | Parts of the Plant | Strains | Indica and Sativa
-					</p>
+					</p> */}
 					<Header as='h3' style={{ fontSize: '2em' }}>Cannabis and Your Body</Header>
-					<p style={{ fontSize: '1.33em' }}>
+					{/* <p style={{ fontSize: '1.33em' }}>
 				  	How Indicas and Sativas Change Your High | Why THC Gets You High and CBD Doesn’t | THCA and THC: What’s the Difference?
-					</p>
+					</p> */}
 				</Grid.Column>
 				</Grid.Row>
 			</Grid>
 		</Segment>
-		<Segment style={{ padding: '8em 0em' }} vertical>
+		{/* <Segment style={{ padding: '8em 0em' }} vertical>
 			<Container text>
 				<Header as='h3' style={{ fontSize: '2em' }}>High!</Header>
 				<p style={{ fontSize: '1.33em' }}>
@@ -47,7 +47,7 @@ const Home = () => (
 				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque omnis quos mollitia molestias beatae, sequi laborum repellendus quis harum ipsam recusandae accusamus modi ullam veritatis cum. Laboriosam aperiam ipsa incidunt.
 				</p>
 			</Container>
-		</Segment>
+		</Segment> */}
 	</div>
 )
 export default Home

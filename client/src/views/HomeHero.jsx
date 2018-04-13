@@ -18,7 +18,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='The Weed DataBase'
+      content='The Weed DataBase & Forum'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
