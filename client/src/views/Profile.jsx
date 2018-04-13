@@ -2,7 +2,7 @@ import React from 'react'
 import httpClient from '../httpClient'
 // import { Link } from 'react-router-dom'
 import { Card, Icon, Image } from 'semantic-ui-react'
-
+import profileImage from '../images/profileimage.jpg'
 
 class Profile extends React.Component {
 
@@ -20,7 +20,6 @@ class Profile extends React.Component {
 
   handleEditProfileClick() {
     this.props.routeProps.history.push('/editprofile')
-
     
   }
     
@@ -28,7 +27,7 @@ class Profile extends React.Component {
     const currentUser = this.props.currentUser
     return (
       <Card centered>
-      <Image src='https://pbs.twimg.com/media/BaAobmoIQAAt88c.jpg' />
+      <Image src={profileImage} alt={currentUser.name} />
       <Card.Content>
         <Card.Header>
           {currentUser.name}
