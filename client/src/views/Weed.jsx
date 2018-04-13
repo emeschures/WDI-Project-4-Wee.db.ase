@@ -22,22 +22,6 @@ class Weed extends React.Component {
     this.props.routeProps.history.push('/newweed')
   }
 
-  onCommentSubmit(evt) {
-    evt.preventDefault()
-		httpClient.postComment(this.props.routeProps.match.params.id, this.state.fields).then((serverResponse) => {
-      this.props.routeProps.history.push('/weed')
-    })
-  }
-  
-  handleInputChange(evt){
-    this.setState({
-      fields: {
-        ...this.state.fields,
-        [evt.target.name]: evt.target.value
-      }
-    })
-  }
-
   render() {
     const { weed } = this.state
     const body = this.state.fields.body

@@ -71,8 +71,8 @@ httpClient.getUser = function(id) {
   return this({ method: 'get', url: `/api/users/${id}`})
 }
 
-httpClient.postComment = function(id) {
-	return this({ method: 'post', url: `/api/weed/${id}/posts`})
+httpClient.postComment = function(id,field) {
+	return this({ method: 'post', url: `/api/weed/${id}/posts`, data:field})
 }
 
 httpClient.showWeed = function(id) {

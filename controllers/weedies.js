@@ -7,8 +7,8 @@ const
 module.exports = {
 
 	index: (req, res) => {
-		Weed.find({}, (err, weed) => {
-			res.json(weed)
+		Weed.find({}).populate("user").exec((err, weeds) => {
+			res.json(weeds)
 		})
 	},
 

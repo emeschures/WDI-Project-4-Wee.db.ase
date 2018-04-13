@@ -8,23 +8,24 @@ class Comments extends React.Component {
 
 	state = { 
 		thatWeed:{},
-		commments:[]
+		body:"",
+		comments:[]
 	}
   
     componentDidMount() {
       httpClient.showWeed(this.props.match.params.id).then((serverResponse) => {
 				console.log(serverResponse)
         this.setState({ 
-					thatWeed: serverResponse.data 
+					thatWeed: serverResponse.data,
+					comments: serverResponse.data.comments
 				})
       })
     }
-
   
     onCommentSubmit(evt) {
       evt.preventDefault()
-          httpClient.postComment(this.props.routeProps.match.params.id, this.state.fields).then((serverResponse) => {
-        this.props.routeProps.history.push('/weed')
+          httpClient.postComment(this.props.match.params.id, this.state.fields).then((serverResponse) => {
+        this.props.history.push('/comments')
       })
     }
     
@@ -43,35 +44,32 @@ class Comments extends React.Component {
       return (
         <div className="weed">
        
-        <Container>
+					<Container>
 
-         <Header as='h1' textAlign='center'>{this.state.thatWeed.name}</Header>
-         <Segment>
-          <Divider clearing />
-							<div>            
-                 <Header as='h4'className="weedType">Type: {thatWeed.weedType}</Header>
-                   <p>{thatWeed.description}</p>
-               </div>
- 							
-								
-							<Form  reply>
-								<Form.TextArea name='comments' />
-								<Button content='Add Comment' labelPosition='left' icon='edit' size='mini' />
-							</Form>
-
-								{this.state.comments.map((c) => {
-									return (
-										<div>
-											{c}
+						<Header as='h1' textAlign='center'>{this.state.thatWeed.name}</Header>
+							<Segment>
+								<Divider clearing />
+										<div>            
+											<Header as='h4'className="weedType">Type: {thatWeed.weedType}</Header>
+												<p>{thatWeed.description}</p>
 										</div>
-									)
-								})}
-         
-        </Segment>
-       </Container>
-            
- 
-  
+		
+										<Form  onChange={this.handleInputChange.bind(this)} onSubmit={this.onCommentSubmit.bind(this)} reply>
+											<Form.TextArea name='body' />
+											<Button content='Add Comment' labelPosition='left' icon='edit' size='mini' />
+										</Form>
+										 	/* condition: comments must exist before mapping out */
+											{this.state.comments && this.state.comments.map((c) => {
+												return (
+													
+													<div>
+														{c.body}
+													</div>
+												)
+											})}														
+							</Segment>
+					</Container>
+
         </div>
       )
     }
