@@ -46,8 +46,8 @@ class Weed extends React.Component {
           })}
       </Segment>
      </Container>
-          
-        <Button onClick={this.handleOnWeedClick.bind(this)}>Add Weed</Button>
+        
+        {this.props.currentUser._id == '5ad12970d66f236375767f78' && <Button onClick={this.handleOnWeedClick.bind(this)}>Add Weed</Button>}
 
       </div>
     )

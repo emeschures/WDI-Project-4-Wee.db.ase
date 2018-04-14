@@ -7,6 +7,9 @@ import { Container, Header, Button, Divider, Segment, Form } from 'semantic-ui-r
 class Comments extends React.Component {
 
 	state = { 
+		fields: {
+			user: this.props.currentUser._id
+		},
 		thatWeed:{},
 		body:"",
 		comments:[]
@@ -23,9 +26,12 @@ class Comments extends React.Component {
     }
   
     onCommentSubmit(evt) {
-      evt.preventDefault()
+			evt.preventDefault()
+				
           httpClient.postComment(this.props.match.params.id, this.state.fields).then((serverResponse) => {
-        this.props.history.push('/comments')
+						this.setState({
+							comments: serverResponse.data.comments
+						})
       })
     }
     
@@ -54,16 +60,17 @@ class Comments extends React.Component {
 												<p>{thatWeed.description}</p>
 										</div>
 		
-										<Form  onChange={this.handleInputChange.bind(this)} onSubmit={this.onCommentSubmit.bind(this)} reply>
+										<Form onChange={this.handleInputChange.bind(this)} onSubmit={this.onCommentSubmit.bind(this)} reply>
 											<Form.TextArea name='body' />
 											<Button content='Add Comment' labelPosition='left' icon='edit' size='mini' />
 										</Form>
-										 	/* condition: comments must exist before mapping out */
+										
+										 	{/* condition: comments must exist before mapping out */}
 											{this.state.comments && this.state.comments.map((c) => {
 												return (
 													
 													<div>
-														{c.body}
+														<span>{c.body}</span> <span>{c.user && c.user.name}</span>
 													</div>
 												)
 											})}														

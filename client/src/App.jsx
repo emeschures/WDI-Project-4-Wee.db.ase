@@ -3,6 +3,8 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
 import httpClient from './httpClient'
 
+// import { Grid, Header, List } from 'semantic-ui-react'
+
 import {
   Container,
   Responsive,
@@ -66,7 +68,7 @@ class App extends React.Component {
                   }} />
 
                   <Route path="/weed/:id" render={(props) => {
-                    return <Comments {...props} />
+                    return <Comments currentUser={this.state.currentUser} {...props} />
                   }} />
 
                   <Route path="/newWeed" render={(routeProps) => {
@@ -107,7 +109,7 @@ class App extends React.Component {
                     </List>
                     </Grid.Column>
                     <Grid.Column width={7}>
-                    <Header as='h4' inverted>Weed.io</Header>
+                    <Header as='h4' inverted>Wee.db.ase</Header>
                     <p>Go green.</p>
                     </Grid.Column>
                   </Grid.Row>

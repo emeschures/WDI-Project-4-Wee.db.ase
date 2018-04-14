@@ -1,19 +1,19 @@
 const
-	// express = require('express'),
-	Weed = require('../models/Weed.js')
-	// { verifyToken } = require('../serverAuth,js')
+	express = require('express'),
+	Weed = require('../models/Weed.js'),
+	{ verifyToken } = require('../serverAuth.js')
 
 
 module.exports = {
 
 	index: (req, res) => {
-		Weed.find({}).populate("user").exec((err, weeds) => {
+		Weed.find({}).populate("comments.user").exec((err, weeds) => {
 			res.json(weeds)
 		})
 	},
 
 	show: (req, res) => {
-		Weed.findById(req.params.id, (err, weed) => {
+		Weed.findById(req.params.id).populate("comments.user").exec((err, weed) => {
 			res.json(weed)
 		})
 	},
@@ -26,8 +26,10 @@ module.exports = {
 	},
 
 	createPost: (req, res) => {
-		Weed.findById(req.params.id, (err, weed) => {
+		Weed.findById(req.params.id).populate("comments.user").exec((err, weed) => {
+			console.log(req.body,"#########")
 			weed.comments.push(req.body)
+			console.log(weed)
 			weed.save((err) => {
 				res.json(weed)
 			})
@@ -35,7 +37,7 @@ module.exports = {
 	},
 
 	update: (req, res) => {
-		Weed.findById(req.params.id, (err, weed) => {
+		Weed.findById(req.params.id).populate("comments.user").exec((err, weed) => {
 			Object.assign(weed, req.body)
 			weed.save((err, updatedWeed) => {
 				res.json({success: true, message: "Weed updated.", weed})
