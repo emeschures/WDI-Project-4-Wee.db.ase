@@ -14,17 +14,17 @@ const Home = () => (
 				<Grid.Row>
 				<Grid.Column width={8}>
 					<Header as='h3' style={{ fontSize: '2em' }}>Products and How to Consume</Header>
-					{/* <p style={{ fontSize: '1.33em' }}>
-					Smoking | Vaping | Edibles | Topicals | Concentrates
-					</p> */}
+					<p style={{ fontSize: '1.33em' }}>
+						Smoking | Vaping | Edibles | Topicals | Concentrates
+					</p>
 					<Header as='h3' style={{ fontSize: '2em' }}>The Plant</Header>
-					{/* <p style={{ fontSize: '1.33em' }}>
-				  	What is Cannabis | Parts of the Plant | Strains | Indica and Sativa
-					</p> */}
+					<p style={{ fontSize: '1.33em' }}>
+				  		What is Cannabis | Parts of the Plant | Strains | Indica and Sativa
+					</p>
 					<Header as='h3' style={{ fontSize: '2em' }}>Cannabis and Your Body</Header>
-					{/* <p style={{ fontSize: '1.33em' }}>
-				  	How Indicas and Sativas Change Your High | Why THC Gets You High and CBD Doesn’t | THCA and THC: What’s the Difference?
-					</p> */}
+					<p style={{ fontSize: '1.33em' }}>
+				  		How Indicas and Sativas Change Your High | Why THC Gets You High and CBD Doesn’t | THCA and THC: What’s the Difference?
+					</p>
 				</Grid.Column>
 				</Grid.Row>
 			</Grid>

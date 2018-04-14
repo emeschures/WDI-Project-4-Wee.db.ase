@@ -3,7 +3,6 @@ const
 	Weed = require('../models/Weed.js'),
 	{ verifyToken } = require('../serverAuth.js')
 
-
 module.exports = {
 
 	index: (req, res) => {
@@ -28,7 +27,7 @@ module.exports = {
 	createPost: (req, res) => {
 		Weed.findById(req.params.id).populate("comments.user").exec((err, weed) => {
 			console.log(req.body,"#########")
-			weed.comments.push(req.body)
+			weed.comments.push({...req.body, user: req.user})
 			console.log(weed)
 			weed.save((err) => {
 				res.json(weed)

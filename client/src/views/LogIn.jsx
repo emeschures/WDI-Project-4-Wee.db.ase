@@ -3,17 +3,17 @@ import httpClient from '../httpClient'
 import { Form, Button } from 'semantic-ui-react'
 
 class LogIn extends React.Component {
-    state = {
-        fields: { email: '', password: '' }
-    }
+	state = {
+			fields: { email: '', password: '' }
+	}
 
     onInputChange(evt) {
-        this.setState({
-            fields: {
-                ...this.state.fields,
-                [evt.target.name]: evt.target.value
-            }
-        })
+			this.setState({
+				fields: {
+						...this.state.fields,
+						[evt.target.name]: evt.target.value
+				}
+			})
     }
 
     onFormSubmit(evt) {

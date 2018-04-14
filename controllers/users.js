@@ -21,27 +21,26 @@ module.exports = {
 	// create a new user
 	create: (req, res) => {
 		User.create(req.body, (err, user) => {
-			if(err) return res.json({success: false, code: err.code})
+			if(err) return res.json({ success: false, code: err.code })
 			// once user is created, generate a token to "log in":
 			const token = signToken(user)
-			res.json({success: true, message: "User created. Token attached.", token})
+			res.json({ success: true, message: "User created. Token attached.", token })
 		})
 	},
 
 	// update an existing user
 	update: (req, res) => {
-		// User.findById(req.params.id, (err, user) => {
 			Object.assign(req.user, req.body)
 			req.user.save((err, updatedUser) => {
-				res.json({success: true, message: "User updated.", user: updatedUser})
-			// })
-		})
+				const token = signToken(updatedUser)
+				res.json({ success: true, message: "User updated.", user: updatedUser, token })
+			})
 	},
 
 	// delete an existing user
 	destroy: (req, res) => {
 		User.findByIdAndRemove(req.params.id, (err, user) => {
-			res.json({success: true, message: "User deleted.", user})
+			res.json({ success: true, message: "User deleted.", user })
 		})
 	},
 
@@ -52,11 +51,11 @@ module.exports = {
 			// if there's no user or the password is invalid
 			if(!user || !user.validPassword(req.body.password)) {
 				// deny access
-				return res.json({success: false, message: "Invalid credentials."})
+				return res.json({ success: false, message: "Invalid credentials." })
 			}
 
 			const token = signToken(user)
-			res.json({success: true, message: "Token attached.", token})
+			res.json({ success: true, message: "Token attached.", token })
 		})
 	}
 }

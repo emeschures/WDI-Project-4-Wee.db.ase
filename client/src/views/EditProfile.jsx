@@ -19,12 +19,9 @@ class EditProfile extends React.Component {
 
 	handleUpdateClick(evt) {
 		evt.preventDefault()
-		httpClient.editProfile(this.props.currentUser._id, this.state.fields).then((serverResponse) => {
-			console.log(serverResponse.data)
-			// this.setState({
-			// 	fields: serverResponse.data.user
-			// })
-			// this.props.routeProps.history.push('/profile')		
+		httpClient.editProfile(this.props.currentUser._id, this.state.fields).then(() => {
+			this.props.onUpdateProfileSuccess()
+			this.props.routeProps.history.push('/profile')
 		})
 	}
 

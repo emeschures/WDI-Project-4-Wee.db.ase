@@ -82,7 +82,7 @@ class App extends React.Component {
                   }} />
 
                   <Route path="/editprofile" render={(routeProps) => {
-                    return <EditProfile currentUser={currentUser} routeProps={routeProps} />
+                    return <EditProfile currentUser={currentUser} onUpdateProfileSuccess={this.onLoginSuccess.bind(this)}  routeProps={routeProps} />
                   }} />
                   
                   <Route path="/about" component={About} />

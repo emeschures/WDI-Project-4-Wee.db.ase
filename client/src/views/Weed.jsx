@@ -11,7 +11,6 @@ class Weed extends React.Component {
             }
           }
 
-  
   componentDidMount() {
     httpClient.getWeed().then((serverResponse) => {
       this.setState({ weed: serverResponse.data })
@@ -35,7 +34,7 @@ class Weed extends React.Component {
 
           {weed.map((w) => {
             return (
-            <div>
+            <div key={w._id}>
               <Link to={`/weed/${w._id}`}><Header as='h2' key={w._id} className="weedName">{w.name}</Header></Link>            
               <Header as='h4'className="weedType">Type: {w.weedType}</Header>
                 <p>{w.description}</p>

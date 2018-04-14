@@ -65,6 +65,9 @@ httpClient.newWeed = function(weedInfo) {
 
 httpClient.editProfile = function(id, fields) {
   return this({ method: 'patch', url: `/api/users/${id}`, data: fields })
+	.then((serverResponse) => {
+		this.setToken(serverResponse.data.token)
+	})
 }
 
 httpClient.getUser = function(id) {
