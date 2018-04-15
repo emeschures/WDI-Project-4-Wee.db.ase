@@ -30,3 +30,10 @@ Join the Wee.db.ase community of passionate cannabis consumers and patients and 
 - Clean up comments text area.
 - Allow users to choose their own picture.
 
+[Link to Balsamiq framework](https://balsamiq.cloud/stle5vb/pia83nv/r2278/)
+
+[Link to Trello](https://trello.com/b/ytf5R8HE/weedbase/)
+
+[Link to Heroku]()
+
+
