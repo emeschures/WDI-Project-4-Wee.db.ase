@@ -33,6 +33,6 @@ Join the Wee.db.ase community of passionate cannabis consumers and patients and 
 
 [Link to Trello](https://trello.com/b/ytf5R8HE/weedbase/)
 
-[Link to Heroku]()
+[Link to Heroku](https://frozen-inlet-92440.herokuapp.com/)
 
 
