@@ -71,15 +71,19 @@ httpClient.editProfile = function(id, fields) {
 }
 
 httpClient.getUser = function(id) {
-  return this({ method: 'get', url: `/api/users/${id}`})
+  return this({ method: 'get', url: `/api/users/${id}` })
 }
 
 httpClient.postComment = function(id,field) {
-	return this({ method: 'post', url: `/api/weed/${id}/posts`, data:field})
+	return this({ method: 'post', url: `/api/weed/${id}/posts`, data:field })
 }
 
 httpClient.showWeed = function(id) {
-	return this({ method: 'get', url: `/api/weed/${id}`})
+	return this({ method: 'get', url: `/api/weed/${id}` })
+}
+
+httpClient.getCannabisData = function() {
+	return this({ method: 'get', url: '/api/cannabisdata' })
 }
 
 // During initial app load attempt to set a localStorage stored token
