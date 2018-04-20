@@ -15,7 +15,11 @@ const Home = () => (
 				<Grid.Column width={8}>
 					<Header as='h3' style={{ fontSize: '2em' }}>Products and How to Consume</Header>
 					<p style={{ fontSize: '1.33em' }}>
-						Smoking | Vaping | Edibles | Topicals | Concentrates
+						<a href="https://en.wikipedia.org/wiki/Cannabis_smoking">Smoking</a> | 
+						<a href="https://en.wikipedia.org/wiki/Vaporizer_(inhalation_device)#Marijuana_vaporizers"> Vaping</a> | 
+						<a href="https://en.wikipedia.org/wiki/Cannabis_edible"> Edibles</a> | 
+						<a href="https://weedmaps.com/learn/products-and-how-to-consume/alternative-cannabis-products/"> Topicals</a> | 
+						<a href="https://en.wikipedia.org/wiki/Cannabis_concentrate"> Concentrates</a>
 					</p>
 					<Header as='h3' style={{ fontSize: '2em' }}>The Plant</Header>
 					<p style={{ fontSize: '1.33em' }}>
