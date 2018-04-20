@@ -1,6 +1,4 @@
 # Wee.db.ase
---
-
 ![alt text](images/screenshot.png)
 
 Wee.db.ase is a database and forum. Whether you’re new to cannabis, a medical marijuana patient, or a seasoned consumer, Wee.db.ase is a perfect place for you!
