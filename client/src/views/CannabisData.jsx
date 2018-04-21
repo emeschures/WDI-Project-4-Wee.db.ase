@@ -11,9 +11,9 @@ class CannabisData extends React.Component {
 componentDidMount() {
   httpClient.getCannabisData().then((serverResponse) => {
     console.log(serverResponse)
-    this.setState({
-      cannabisData: serverResponse.data
-    })
+    this.setState({ cannabisData: serverResponse.data })
   })
 }
+
+export default CannabisData
 

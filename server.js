@@ -5,11 +5,14 @@ const
     logger = require('morgan'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
+    axios = require('axios'),
+    httpClient = axios.create(),
     MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/react-express-jwt',
     PORT = process.env.PORT || 3001,
     usersRoutes = require('./routes/users.js'),
     weediesRoutes = require('./routes/weedies.js'),
     API_KEY = process.env.API_KEY
+
 
 mongoose.connect(MONGODB_URI, (err) => {
     console.log(err || `Connected to MongoDB.`)
