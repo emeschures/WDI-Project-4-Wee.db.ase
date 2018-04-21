@@ -15,15 +15,18 @@ const Home = () => (
 				<Grid.Column width={8}>
 					<Header as='h3' style={{ fontSize: '2em' }}>Products and How to Consume</Header>
 					<p style={{ fontSize: '1.33em' }}>
-						<a href="https://en.wikipedia.org/wiki/Cannabis_smoking">Smoking</a> | 
-						<a href="https://en.wikipedia.org/wiki/Vaporizer_(inhalation_device)#Marijuana_vaporizers"> Vaping</a> | 
-						<a href="https://en.wikipedia.org/wiki/Cannabis_edible"> Edibles</a> | 
-						<a href="https://weedmaps.com/learn/products-and-how-to-consume/alternative-cannabis-products/"> Topicals</a> | 
-						<a href="https://en.wikipedia.org/wiki/Cannabis_concentrate"> Concentrates</a>
+						<a href="https://en.wikipedia.org/wiki/Cannabis_smoking" target="_blank">Smoking</a> | 
+						<a href="https://en.wikipedia.org/wiki/Vaporizer_(inhalation_device)#Marijuana_vaporizers" target="_blank"> Vaping</a> | 
+						<a href="https://en.wikipedia.org/wiki/Cannabis_edible" target="_blank"> Edibles</a> | 
+						<a href="https://weedmaps.com/learn/products-and-how-to-consume/alternative-cannabis-products/" target="_blank"> Topicals</a> | 
+						<a href="https://en.wikipedia.org/wiki/Cannabis_concentrate" target="_blank"> Concentrates</a>
 					</p>
 					<Header as='h3' style={{ fontSize: '2em' }}>The Plant</Header>
 					<p style={{ fontSize: '1.33em' }}>
-				  		What is Cannabis | Parts of the Plant | Strains | Indica and Sativa
+				  	<a href="https://en.wikipedia.org/wiki/Cannabis" target="_blank">What is Cannabis</a> | 
+						<a href="https://www.findclearchoice.com/cannabis-anatomy/" target="_blank"> Parts of the Plant</a> | 
+						<a href="https://en.wikipedia.org/wiki/Cannabis_strains" target="_blank"> Strains</a> | 
+						<a href="https://en.wikipedia.org/wiki/Cannabis_strains" target="_blank"> Indica</a> and <a href="https://en.wikipedia.org/wiki/Cannabis_sativa" target="_blank">Sativa</a>
 					</p>
 					<Header as='h3' style={{ fontSize: '2em' }}>Cannabis and Your Body</Header>
 					<p style={{ fontSize: '1.33em' }}>
