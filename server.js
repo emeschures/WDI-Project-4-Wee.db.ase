@@ -27,7 +27,7 @@ app.get('/api', (req, res) => {
 })
 
 app.get('/api/cannabisdata', (req, res) => {
-    httpClient.get(`strainapi.evanbusse.com/${API_KEY}/strains/search/all`).then((apiResponse) => {
+    httpClient.get(`http://strainapi.evanbusse.com/${API_KEY}/strains/search/all`).then((apiResponse) => {
         res.json(apiResponse.data)
     })
 })
