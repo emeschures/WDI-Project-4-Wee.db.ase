@@ -7,6 +7,9 @@ import {
   Responsive,
   Segment,
   Visibility,
+  Grid,
+  Header,
+  List
 } from 'semantic-ui-react'
 
 import NavBar from './NavBar'
@@ -95,7 +98,7 @@ class App extends React.Component {
             </Container>
             
             {/* FOOTER */}
-            {/* <Segment inverted vertical style={{ padding: '5em 7em', position: 'fixed', bottom: 0, width: '100%' }}>
+            <Segment inverted vertical style={{ padding: '1em 3em', position: 'fixed', bottom: 0, width: '100%' }}>
               <Grid divided inverted stackable>
                 <Grid.Row>
                   <Grid.Column width={3}>
@@ -107,11 +110,11 @@ class App extends React.Component {
                   </Grid.Column>
                   <Grid.Column width={7}>
                   <Header as='h4' inverted>Wee.db.ase</Header>
-                  <p>Go green.</p>
+                  <p>Copyright 2018</p>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
-            </Segment> */}
+            </Segment>
             {/* END FOOTER */}
           </Visibility>
         </Responsive>

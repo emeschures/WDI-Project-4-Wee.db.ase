@@ -9,9 +9,9 @@ class Comments extends React.Component {
 		fields: {
 			body: ''
 		},
-		thatWeed:{},
-		body:"",
-		comments:[]
+		thatWeed: {},
+		body: "",
+		comments: []
 	}
   
     componentDidMount() {
